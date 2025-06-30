@@ -41,6 +41,8 @@
     enableZshIntegration = true;
     settings = {
       theme = "catppuccin-mocha";
+      shell-integration = "zsh";
+      command = "${pkgs.zsh}/bin/zsh"; # Set zsh as the default shell
     };
   };
 }
