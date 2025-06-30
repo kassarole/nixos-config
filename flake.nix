@@ -16,6 +16,7 @@
             ./hosts/${name}/configuration.nix
             ./hosts/${name}/hardware-configuration.nix
             ./modules/common.nix
+            ./modules/gaming.nix
             home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
