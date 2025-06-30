@@ -5,4 +5,5 @@
     git vim wget htop
   ];
   services.openssh.enable = true;
+  environment.variables.GTK_THEME = "Adwaita-dark";
 }
