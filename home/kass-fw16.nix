@@ -22,13 +22,13 @@
     userName = "kass";
     userEmail = "kass@basedzone.xyz";
   };
-}
-programs.vscode = {
-  enable = true;
-  extensions = with pkgs.vscode-extensions; [
-    pinage404.nix-extension-pack
-    ms-python.python
-    unthrottled.doki-theme
-    ms-vscode-remote.vscode-remote-extensionpack
-  ]
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      pinage404.nix-extension-pack
+      ms-python.python
+      unthrottled.doki-theme
+      ms-vscode-remote.vscode-remote-extensionpack
+    ]
+  };
 }
