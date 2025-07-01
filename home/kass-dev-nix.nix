@@ -9,6 +9,9 @@
   home.packages = with pkgs; [
     vscode
     hyfetch
+    python3
+    python3Packages.pip
+    python3Packages.virtualenv
 
   ];
   programs.git = {
