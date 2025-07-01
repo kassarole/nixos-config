@@ -5,6 +5,8 @@
     git vim wget htop
   ];
   services.openssh.enable = true;
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     SDL2

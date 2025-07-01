@@ -12,7 +12,6 @@
     python3
     python3Packages.pip
     python3Packages.virtualenv
-
   ];
   programs.git = {
     enable=true;
@@ -30,7 +29,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "git"];
-      theme = "half-life";
+      theme = "dpoggi";
     };
   };
 }

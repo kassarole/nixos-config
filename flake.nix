@@ -17,6 +17,7 @@
         ];
         kass-dev-nix = [
           ./modules/mount.nix
+          ./modules/dev.nix
         ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
