@@ -16,6 +16,11 @@
     ghostty
     lutris
     heroic
+    wineWowPackages.stable
+    winetricks
+    archipelago
+    gzdoom
+    qzdl
   ];
   programs.git = {
     enable=true;

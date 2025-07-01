@@ -5,4 +5,11 @@
     git vim wget htop
   ];
   services.openssh.enable = true;
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    SDL2
+    SDL2_mixer
+    libsamplerate
+    fluidsynth
+  ];
 }
