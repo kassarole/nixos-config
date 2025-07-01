@@ -27,8 +27,8 @@
           inherit system;
           modules =
             [
-              ./hosts/${name}/configuration.nix
-              ./hosts/${name}/hardware-configuration.nix
+              ./hosts/${name}/nixos/configuration.nix
+              ./hosts/${name}/nixos/hardware-configuration.nix
               ./modules/common.nix
             ]
             ++ (hostModules.${name} or [])
