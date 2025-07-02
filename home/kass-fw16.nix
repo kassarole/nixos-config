@@ -7,20 +7,6 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    vesktop
-    vscode
-    digikam
-    darktable
-    hyfetch
-    protonup-qt
-    ghostty
-    lutris
-    heroic
-    wineWowPackages.stable
-    winetricks
-    archipelago
-    gzdoom
-    qzdl
   ];
   programs.git = {
     enable=true;

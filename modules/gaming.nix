@@ -1,5 +1,21 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    lutris
+    heroic
+    wineWowPackages.stable
+    winetricks
+    archipelago
+    gzdoom
+    qzdl
+    protonup-qt
+  ];
+  programs.nix-ld.libraries = with pkgs; [
+    SDL2
+    SDL2_mixer
+    libsamplerate
+    fluidsynth
+  ];
   hardware.opengl.driSupport32Bit = true;
 
   # AMD GPU and Vulkan support
