@@ -6,4 +6,9 @@
     digikam
     darktable
     ghostty
+    godot
+    blender
+    libresprite
+    sdrangel
+    sdrpp
 }
