@@ -14,6 +14,7 @@
         kass-fw16 = [
           ./modules/gaming.nix
           ./modules/mount.nix
+          ./modules/gui.nix
         ];
         kass-dev-nix = [
           ./modules/mount.nix
