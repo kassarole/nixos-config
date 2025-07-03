@@ -11,4 +11,5 @@
     libresprite
     sdrangel
     sdrpp
+  ];
 }
