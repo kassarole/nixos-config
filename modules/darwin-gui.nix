@@ -17,6 +17,8 @@
         "ghostty"
         "godot"
         "blender"
+        "microsoft-edge"
+        "windows-app"
     ];
     taps = [
 

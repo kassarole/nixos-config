@@ -1,10 +1,11 @@
-{ config, pkgs, ...}:
+{ config, pkgs, lib, ...}:
 {
     home.username = "krode";
     home.homeDirectory = "/Users/krode";
     home.stateVersion = "25.05";
     programs.home-manager.enable = true;
     home.packages = with pkgs; [
+        dockutil
     ];
     programs.git = {
         enable = true;
@@ -15,6 +16,10 @@
         enable = true;
         enableAutosuggestions = true;
         syntaxHighlighting.enable = true;
+        shellAliases = {
+          update = "sudo darwin-rebuild switch --flake /Users/krode/Documents/nixos-config#kass-mbp";
+          build = "sudo darwin-rebuild build --flake /Users/krode/Documents/nixos-config#kass-mbp";
+    };
         oh-my-zsh = {
             enable = true;
             plugins = [ "git" ];
@@ -73,4 +78,14 @@
       ];
     };
 
+    home.activation.configureDock = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        # Clear and rebuild Dock
+        ${pkgs.dockutil}/bin/dockutil --remove all --no-restart
+        ${pkgs.dockutil}/bin/dockutil --add /System/Applications/Launchpad.app --no-restart
+        ${pkgs.dockutil}/bin/dockutil --add /Applications/Microsoft\ Edge.app --no-restart
+        ${pkgs.dockutil}/bin/dockutil --add /Applications/Ghostty.app --no-restart
+        ${pkgs.dockutil}/bin/dockutil --add /Applications/Visual\ Studio\ Code.app --no-restart
+        
+        killall Dock || true
+    '';
 }
