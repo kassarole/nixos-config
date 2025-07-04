@@ -1,0 +1,25 @@
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+  ];
+  homebrew = {
+    enable = true;
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
+    brews = [
+        
+    ];
+    casks = [
+        "visual-studio-code"
+        "digikam"
+        "vesktop"
+        "darktable"
+        "ghostty"
+        "godot"
+        "blender"
+    ];
+    taps = [
+
+    ];
+  };
+}

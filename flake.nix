@@ -6,8 +6,10 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, flake-utils, home-manager, ... }:
+  outputs = { self, nixpkgs, flake-utils, home-manager, nix-darwin, ... }:
     let
       # Define per-host module lists here
       hostModules = {
@@ -19,6 +21,8 @@
         kass-dev-nix = [
           ./modules/mount.nix
           ./modules/dev.nix
+        ];
+        kass-mbp = [
         ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
@@ -45,8 +49,29 @@
             ];
         };
       };
+      mkDarwinHost = name: system: {
+        ${name} = nix-darwin.lib.darwinSystem {
+          inherit system;
+          modules = [
+            ./hosts/${name}/darwinconfiguration.nix
+            ./modules/darwin-common.nix
+            ./modules/darwin-gui.nix
+          ]
+          ++ (hostModules.${name} or [])
+          ++ [
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = ".bak";
+              home-manager.users.krode = import ./home/${name}.nix;
+            }
+          ];
+        };
+      };
     in {
       nixosConfigurations = mkHost "kass-fw16" "x86_64-linux" // mkHost "kass-dev-nix" "x86_64-linux";
+      darwinConfigurations = mkDarwinHost "kass-mbp" "aarch64-darwin";
       # Add more hosts here as needed
       # // mkHost "other-host" "x86_64-linux"
     };
