@@ -24,6 +24,11 @@
         ];
         kass-mbp = [
         ];
+        kass-desktop = [
+          ./modules/gaming.nix
+          ./modules/mount.nix
+          ./modules/gui.nix
+        ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
       };
@@ -70,7 +75,7 @@
         };
       };
     in {
-      nixosConfigurations = mkHost "kass-fw16" "x86_64-linux" // mkHost "kass-dev-nix" "x86_64-linux";
+      nixosConfigurations = mkHost "kass-fw16" "x86_64-linux" // mkHost "kass-dev-nix" "x86_64-linux" // mkHost "kass-desktop" "x86_64-linux";
       darwinConfigurations = mkDarwinHost "kass-mbp" "aarch64-darwin";
       # Add more hosts here as needed
       # // mkHost "other-host" "x86_64-linux"
