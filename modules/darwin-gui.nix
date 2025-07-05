@@ -19,6 +19,7 @@
         "blender"
         "microsoft-edge"
         "windows-app"
+        "element"
     ];
     taps = [
 

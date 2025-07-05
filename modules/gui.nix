@@ -11,5 +11,6 @@
     libresprite
     sdrangel
     sdrpp
+    element-desktop
   ];
 }
