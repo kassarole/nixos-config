@@ -9,6 +9,13 @@
     gzdoom
     qzdl
     protonup-qt
+    poptracker
+    gamescope
+    steamtinkerlaunch
+    unzip
+    xdotool
+    xorg.xwininfo
+    yad
   ];
   programs.nix-ld.libraries = with pkgs; [
     SDL2
