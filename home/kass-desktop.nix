@@ -14,7 +14,7 @@
       description = "Launch Ghostty";
       key = "Meta+Alt+T"; # Meta is usually the Windows key
     };
-  }
+  };
 
   home.username = "krode";
   home.homeDirectory = "/home/krode";
