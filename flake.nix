@@ -6,10 +6,14 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, flake-utils, home-manager, nix-darwin, ... }:
+  outputs = { self, nixpkgs, flake-utils, home-manager, nix-darwin, plasma-manager, ... }:
     let
       # Define per-host module lists here
       hostModules = {
@@ -50,6 +54,9 @@
                 home-manager.useUserPackages = true;
                 home-manager.backupFileExtension = ".bak";
                 home-manager.users.krode = import ./home/${name}.nix;
+                home-manager.extraSpecialArgs = {
+                  inherit plasma-manager;
+                };
               }
             ];
         };

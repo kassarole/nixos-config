@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, plasma-manager, ... }:
 
 {
-  imports = [ <plasma-manager/modules> ];
+  imports = [ plasma-manager.homeManagerModules.plasma-manager ];
   programs.plasma = {
     enable = true;
     workspace = {
@@ -11,7 +11,6 @@
     };
     hotkeys.commands."launch-ghostty" = {
       command = "ghostty";
-      description = "Launch Ghostty";
       key = "Meta+Alt+T"; # Meta is usually the Windows key
     };
   };
