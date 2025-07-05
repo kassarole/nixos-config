@@ -12,5 +12,6 @@
     sdrangel
     sdrpp
     element-desktop
+    ollama
   ];
 }
