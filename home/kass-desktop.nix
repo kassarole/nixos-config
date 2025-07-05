@@ -15,7 +15,7 @@
   };
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#kass-desktop";

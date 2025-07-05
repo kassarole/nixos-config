@@ -14,7 +14,7 @@
     };
     programs.zsh = {
         enable = true;
-        enableAutosuggestions = true;
+        autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
         shellAliases = {
           update = "sudo darwin-rebuild switch --flake /Users/krode/Documents/nixos-config#kass-mbp";
