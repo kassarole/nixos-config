@@ -1,6 +1,21 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ <plasma-manager/modules> ];
+  programs.plasma = {
+    enable = true;
+    workspace = {
+      clickItemTo = "select";
+      lookAndFeel = "org.kde.breezedark.desktop";
+
+    };
+    hotkeys.commands."launch-ghostty" = {
+      command = "ghostty";
+      description = "Launch Ghostty";
+      key = "Meta+Alt+T"; # Meta is usually the Windows key
+    };
+  }
+
   home.username = "krode";
   home.homeDirectory = "/home/krode";
   home.stateVersion = "25.05";
