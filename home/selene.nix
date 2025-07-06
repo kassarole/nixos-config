@@ -18,22 +18,13 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#kass-fw16";
-      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#kass-fw16";
+      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#selene";
+      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#selene";
     };
     oh-my-zsh = {
       enable = true;
       plugins = [ "git"];
-      theme = "half-life";
-    };
-  };
-  programs.ghostty = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      theme = "catppuccin-mocha";
-      shell-integration = "zsh";
-      command = "${pkgs.zsh}/bin/zsh"; # Set zsh as the default shell
+      theme = "dpoggi";
     };
   };
 }

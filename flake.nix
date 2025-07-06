@@ -17,18 +17,18 @@
     let
       # Define per-host module lists here
       hostModules = {
-        kass-fw16 = [
+        metis = [
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
         ];
-        kass-dev-nix = [
+        selene = [
           ./modules/mount.nix
           ./modules/dev.nix
         ];
-        kass-mbp = [
+        nike = [
         ];
-        kass-desktop = [
+        hestia = [
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
@@ -82,8 +82,8 @@
         };
       };
     in {
-      nixosConfigurations = mkHost "kass-fw16" "x86_64-linux" // mkHost "kass-dev-nix" "x86_64-linux" // mkHost "kass-desktop" "x86_64-linux";
-      darwinConfigurations = mkDarwinHost "kass-mbp" "aarch64-darwin";
+      nixosConfigurations = mkHost "metis" "x86_64-linux" // mkHost "selene" "x86_64-linux" // mkHost "hestia" "x86_64-linux";
+      darwinConfigurations = mkDarwinHost "nike" "aarch64-darwin";
       # Add more hosts here as needed
       # // mkHost "other-host" "x86_64-linux"
     };

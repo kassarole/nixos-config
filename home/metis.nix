@@ -1,20 +1,6 @@
-{ config, pkgs, plasma-manager, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [ plasma-manager.homeManagerModules.plasma-manager ];
-  programs.plasma = {
-    enable = true;
-    workspace = {
-      clickItemTo = "select";
-      lookAndFeel = "org.kde.breezedark.desktop";
-
-    };
-    hotkeys.commands."launch-ghostty" = {
-      command = "ghostty";
-      key = "Meta+Alt+T"; # Meta is usually the Windows key
-    };
-  };
-
   home.username = "krode";
   home.homeDirectory = "/home/krode";
   home.stateVersion = "25.05";
@@ -32,8 +18,8 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#kass-desktop";
-      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#kass-desktop";
+      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#metis";
+      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#metis";
     };
     oh-my-zsh = {
       enable = true;
