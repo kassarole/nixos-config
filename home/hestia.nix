@@ -6,9 +6,9 @@
     enable = true;
     workspace = {
       clickItemTo = "select";
-      lookAndFeel = "org.kde.breezedark.desktop";
-      cursor.theme = "Hackneyed";
-
+      lookAndFeel = "com.github.vinceliuice.WhiteSur-dark";
+      cursor.theme = "WhiteSur-cursors";
+      iconTheme = "WhiteSur-dark";
     };
     hotkeys.commands."launch-ghostty" = {
       command = "ghostty";
@@ -22,6 +22,9 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    whitesur-kde
+    whitesur-cursors
+    whitesur-icon-theme
   ];
   programs.git = {
     enable=true;

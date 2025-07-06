@@ -4,6 +4,7 @@
     vesktop
     vscode
     digikam
+    microsoft-edge
     darktable
     ghostty
     godot
