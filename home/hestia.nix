@@ -7,7 +7,7 @@
     workspace = {
       clickItemTo = "select";
       lookAndFeel = "org.kde.breezedark.desktop";
-      cursor.theme = "Hackneyed"
+      cursor.theme = "Hackneyed";
 
     };
     hotkeys.commands."launch-ghostty" = {
