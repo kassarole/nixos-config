@@ -6,25 +6,29 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, flake-utils, home-manager, nix-darwin, ... }:
+  outputs = { self, nixpkgs, flake-utils, home-manager, nix-darwin, plasma-manager, ... }:
     let
       # Define per-host module lists here
       hostModules = {
-        kass-fw16 = [
+        metis = [
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
         ];
-        kass-dev-nix = [
+        selene = [
           ./modules/mount.nix
           ./modules/dev.nix
         ];
-        kass-mbp = [
+        nike = [
         ];
-        kass-desktop = [
+        hestia = [
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
@@ -50,6 +54,9 @@
                 home-manager.useUserPackages = true;
                 home-manager.backupFileExtension = ".bak";
                 home-manager.users.krode = import ./home/${name}.nix;
+                home-manager.extraSpecialArgs = {
+                  inherit plasma-manager;
+                };
               }
             ];
         };
@@ -75,8 +82,8 @@
         };
       };
     in {
-      nixosConfigurations = mkHost "kass-fw16" "x86_64-linux" // mkHost "kass-dev-nix" "x86_64-linux" // mkHost "kass-desktop" "x86_64-linux";
-      darwinConfigurations = mkDarwinHost "kass-mbp" "aarch64-darwin";
+      nixosConfigurations = mkHost "metis" "x86_64-linux" // mkHost "selene" "x86_64-linux" // mkHost "hestia" "x86_64-linux";
+      darwinConfigurations = mkDarwinHost "nike" "aarch64-darwin";
       # Add more hosts here as needed
       # // mkHost "other-host" "x86_64-linux"
     };

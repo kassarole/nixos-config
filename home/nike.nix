@@ -14,11 +14,11 @@
     };
     programs.zsh = {
         enable = true;
-        enableAutosuggestions = true;
+        autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
         shellAliases = {
-          update = "sudo darwin-rebuild switch --flake /Users/krode/Documents/nixos-config#kass-mbp";
-          build = "sudo darwin-rebuild build --flake /Users/krode/Documents/nixos-config#kass-mbp";
+          update = "sudo darwin-rebuild switch --flake /Users/krode/Documents/nixos-config#nike";
+          build = "sudo darwin-rebuild build --flake /Users/krode/Documents/nixos-config#nike";
     };
         oh-my-zsh = {
             enable = true;

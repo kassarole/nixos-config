@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-    networking.hostName = "kass-mbp";
+    networking.hostName = "nike";
     environment.systemPackages = with pkgs; [
         git
         vim

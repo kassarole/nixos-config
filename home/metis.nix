@@ -15,11 +15,11 @@
   };
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#kass-fw16";
-      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#kass-fw16";
+      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#metis";
+      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#metis";
     };
     oh-my-zsh = {
       enable = true;

@@ -9,14 +9,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "kass-dev-nix"; # Define your hostname.
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "hestia"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -44,19 +42,56 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Enable the X11 windowing system.
+  # You can disable this if you're only using the Wayland session.
+  services.xserver.enable = true;
+
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true; # Enable Wayland support
+  services.desktopManager.plasma6.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.krode = {
     isNormalUser = true;
-    description = "kass";
+    description = "Kass";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      kdePackages.kate
+    #  thunderbird
+    ];
   };
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -65,10 +100,38 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  vim
-  wget
-  git
+  #  wget
   ];
+
+  fileSystems."/mnt/old-kubuntu" = {
+    device = "/dev/disk/by-uuid/ff55f3ea-a745-4a2b-b635-fdc1001830b7"; # Replace with your actual UUID
+    fsType = "ext4"; # Adjust according to your filesystem type
+    options = [ "noatime" "nodiratime" ];
+  };
+
+  fileSystems."/mnt/Data1" = {
+    device = "/dev/disk/by-uuid/79c4b28c-b433-42a6-9a5d-bf21b3580e8a"; # Replace with your actual UUID
+    fsType = "ext4"; # Adjust according to your filesystem type
+    options = [ "noatime" "nodiratime" ];
+  };
+
+  fileSystems."/mnt/Data2" = {
+    device = "/dev/disk/by-uuid/55043cf6-4a67-4e52-942e-d180d5b5263e"; # Replace with your actual UUID
+    fsType = "ext4"; # Adjust according to your filesystem type
+    options = [ "noatime" "nodiratime" ];
+  };
+  
+  fileSystems."/mnt/Data3" = {
+    device = "/dev/disk/by-uuid/3b510915-7633-4205-9b55-f74f21ea900d"; # Replace with your actual UUID
+    fsType = "ext4"; # Adjust according to your filesystem type
+    options = [ "noatime" "nodiratime" ];
+  };
+
+  fileSystems."/mnt/Data4" = {
+    device = "/dev/disk/by-uuid/d1ebcada-d045-4f39-99a4-f7f405a8421f"; # Replace with your actual UUID
+    fsType = "ext4"; # Adjust according to your filesystem type
+    options = [ "noatime" "nodiratime" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -81,13 +144,13 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
