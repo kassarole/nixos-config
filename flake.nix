@@ -32,6 +32,7 @@
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
+          ./modules/ctftools.nix
         ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
