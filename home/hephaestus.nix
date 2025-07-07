@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     ansible
+    just
   ];
   programs.git = {
     enable=true;
