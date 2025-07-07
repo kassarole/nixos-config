@@ -36,7 +36,7 @@
         ];
         hephaestus = [
           ./modules/mount.nix
-        ]
+        ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
       };
