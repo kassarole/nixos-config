@@ -20,8 +20,8 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#hephaestus";
-      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#hepaestus";
+      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#eros";
+      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#eros";
     };
     oh-my-zsh = {
       enable = true;
