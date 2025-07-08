@@ -7,7 +7,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
-    java
+    jdk21_headless
   ];
   programs.git = {
     enable=true;
