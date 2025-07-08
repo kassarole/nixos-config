@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     jdk21_headless
+    screen
   ];
   programs.git = {
     enable=true;
