@@ -25,6 +25,7 @@
         selene = [
           ./modules/mount.nix
           ./modules/dev.nix
+          ./modules/virtualmachine.nix
         ];
         nike = [
         ];
@@ -36,9 +37,10 @@
         ];
         hephaestus = [
           ./modules/mount.nix
+          ./modules/virtualmachine.nix
         ];
         eros = [
-          ./modules/mount.nix
+          ./modules/virtualmachine.nix
         ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];

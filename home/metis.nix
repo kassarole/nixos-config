@@ -36,4 +36,7 @@
       command = "${pkgs.zsh}/bin/zsh"; # Set zsh as the default shell
     };
   };
+  home.file.".zshrc".text = lib.mkAfter ''
+    export TERM=xterm-256color
+  '';
 }
