@@ -6,6 +6,7 @@
     programs.home-manager.enable = true;
     home.packages = with pkgs; [
         dockutil
+        wireguard-go
     ];
     programs.git = {
         enable = true;
