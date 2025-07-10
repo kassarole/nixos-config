@@ -7,7 +7,8 @@
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     brews = [
-        
+      "wireguard-tools"
+      "wireguard-go" 
     ];
     casks = [
         "visual-studio-code"
