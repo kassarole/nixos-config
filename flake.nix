@@ -45,7 +45,7 @@
         gaia = [
           ./modules/virtualmachine.nix
           ./modules/dev.nix
-        ]
+        ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
       };
