@@ -14,5 +14,6 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   programs.nix-ld.enable = true;
-
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 }
