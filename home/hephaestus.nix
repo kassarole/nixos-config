@@ -11,7 +11,7 @@
     just
     ansible-cmdb
   ];
-  pkgs.python311Packages.ansiblecmdb
+  pkgs.python311Packages.ansiblecmdb;
   programs.git = {
     enable=true;
     userName = "kass";
