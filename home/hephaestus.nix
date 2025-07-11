@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     ansible
     just
-    python311Packages.ansible-cmdb
   ];
   programs.git = {
     enable=true;
