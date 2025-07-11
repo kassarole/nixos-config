@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     ansible
     just
+    ansible-cmdb
   ];
   programs.git = {
     enable=true;
