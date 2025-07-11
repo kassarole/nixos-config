@@ -9,9 +9,8 @@
   home.packages = with pkgs; [
     ansible
     just
-    ansible-cmdb
+    python311Packages.ansible-cmdb
   ];
-  pkgs.python311Packages.ansiblecmdb;
   programs.git = {
     enable=true;
     userName = "kass";
