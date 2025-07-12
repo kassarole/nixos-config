@@ -9,7 +9,6 @@
     hyfetch
     ncdu
     nettools
-    powertop
   ];
   services.openssh.enable = true;
   programs.zsh.enable = true;
@@ -17,4 +16,5 @@
   programs.nix-ld.enable = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+  powerManagement.powertop.enable = true;
 }
