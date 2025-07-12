@@ -9,6 +9,7 @@
     hyfetch
     ncdu
     nettools
+    powertop
   ];
   services.openssh.enable = true;
   programs.zsh.enable = true;
