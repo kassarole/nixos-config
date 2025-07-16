@@ -16,5 +16,8 @@
   programs.nix-ld.enable = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
-  powerManagement.powertop.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
 }

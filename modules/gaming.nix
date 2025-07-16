@@ -11,6 +11,8 @@
     protonup-qt
     poptracker
     gamescope
+    gamemode
+    vulkan-tools
     steamtinkerlaunch
     unzip
     xdotool
