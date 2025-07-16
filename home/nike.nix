@@ -91,4 +91,7 @@
     home.file.".zshrc".text = lib.mkAfter ''
       export TERM=xterm-256color
     '';
+    programs.direnv.enable = true;
+    programs.direnv.nix-direnv.enable = true;
+
 }
