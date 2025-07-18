@@ -2,6 +2,10 @@
 {
   hardware.rtl-sdr.enable = true;
   users.users.krode.extraGroups = [ "plugdev" ];
+  users.users.krode.packages = with pkgs; [
+    dump1090
+    tar1090
+  ];
 
   systemd.services.rtl_tcp = {
     description = "RTL-SDR TCP server";
