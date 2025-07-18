@@ -21,6 +21,7 @@
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
+          ./modules/sdr.nix
         ];
         selene = [
           ./modules/mount.nix
@@ -47,6 +48,7 @@
           ./modules/dev.nix
         ];
         hermes = [
+          ./modules/sdr.nix
         ];
         # Add more hosts and their modules as needed
         # other-host = [ ./modules/other.nix ];
