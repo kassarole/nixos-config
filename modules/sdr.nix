@@ -3,8 +3,7 @@
   hardware.rtl-sdr.enable = true;
   users.users.krode.extraGroups = [ "plugdev" ];
   users.users.krode.packages = with pkgs; [
-    dump1090
-    tar1090
+    dump1090-fa
   ];
 
   systemd.services.rtl_tcp = {
