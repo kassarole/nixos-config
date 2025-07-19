@@ -7,6 +7,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    screen
   ];
   programs.git = {
     enable=true;
@@ -18,8 +19,8 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#selene";
-      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#selene";
+      update = "sudo nixos-rebuild switch --flake /home/krode/nixos-config#hermes";
+      build = "sudo nixos-rebuild build --flake /home/krode/nixos-config#hermes";
     };
     oh-my-zsh = {
       enable = true;

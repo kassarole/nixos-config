@@ -21,6 +21,7 @@
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
+          ./modules/sdr.nix
         ];
         selene = [
           ./modules/mount.nix
@@ -44,6 +45,10 @@
         ];
         gaia = [
           ./modules/virtualmachine.nix
+          ./modules/dev.nix
+        ];
+        hermes = [
+          ./modules/sdr.nix
           ./modules/dev.nix
         ];
         # Add more hosts and their modules as needed
@@ -95,7 +100,7 @@
         };
       };
     in {
-      nixosConfigurations = mkHost "metis" "x86_64-linux" // mkHost "selene" "x86_64-linux" // mkHost "hestia" "x86_64-linux" // mkHost "hephaestus" "x86_64-linux" // mkHost "eros" "x86_64-linux" // mkHost "gaia" "x86_64-linux";
+      nixosConfigurations = mkHost "metis" "x86_64-linux" // mkHost "selene" "x86_64-linux" // mkHost "hestia" "x86_64-linux" // mkHost "hephaestus" "x86_64-linux" // mkHost "eros" "x86_64-linux" // mkHost "gaia" "x86_64-linux" // mkHost "hermes" "x86_64-linux";
       darwinConfigurations = mkDarwinHost "nike" "aarch64-darwin";
       # Add more hosts here as needed
       # // mkHost "other-host" "x86_64-linux"
