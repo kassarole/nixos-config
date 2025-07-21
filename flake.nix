@@ -104,11 +104,9 @@
         };
       };
     in {
-      nixosConfigurations = mkHost "metis" "x86_64-linux" // mkHost "selene" "x86_64-linux" // mkHost "hestia" "x86_64-linux" // mkHost "hephaestus" "x86_64-linux" // mkHost "eros" "x86_64-linux" // mkHost "gaia" "x86_64-linux" // mkHost "hermes" "x86_64-linux" // mkHost "circe" "x86_64-linux" {
-        nike = mkDarwinHost "nike" "aarch64-darwin";
+      nixosConfigurations = mkHost "metis" "x86_64-linux" // mkHost "selene" "x86_64-linux" // mkHost "hestia" "x86_64-linux" // mkHost "hephaestus" "x86_64-linux" // mkHost "eros" "x86_64-linux" // mkHost "gaia" "x86_64-linux" // mkHost "hermes" "x86_64-linux" // mkHost "circe" "x86_64-linux";
         # Add more hosts here as needed
         # other-host = mkDarwinHost "other-host" "x86_64-darwin";
-      };
       darwinConfigurations = mkDarwinHost "nike" "aarch64-darwin";
       # Add more hosts here as needed
       # // mkHost "other-host" "x86_64-linux"
