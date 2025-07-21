@@ -18,6 +18,7 @@
     xdotool
     xorg.xwininfo
     yad
+    prismlauncher
   ];
   programs.nix-ld.libraries = with pkgs; [
     SDL2

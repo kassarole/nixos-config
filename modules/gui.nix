@@ -13,5 +13,6 @@
     sdrangel
     sdrpp
     element-desktop
+    kicad
   ];
 }
