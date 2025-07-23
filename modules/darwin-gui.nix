@@ -21,6 +21,7 @@
         "microsoft-edge"
         "windows-app"
         "element"
+        "kicad"
     ];
     taps = [
 
