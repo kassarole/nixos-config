@@ -99,6 +99,8 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    jre21_minimal
+    freerouting
   ];
 
   fileSystems."/mnt/old-kubuntu" = {

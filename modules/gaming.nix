@@ -19,6 +19,7 @@
     xorg.xwininfo
     yad
     prismlauncher
+    protontricks
   ];
   programs.nix-ld.libraries = with pkgs; [
     SDL2
