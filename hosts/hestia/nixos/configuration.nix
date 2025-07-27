@@ -47,9 +47,15 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
   services.displayManager.sddm.wayland.enable = true; # Enable Wayland support
   services.desktopManager.plasma6.enable = true;
+
+  services.displayManager.ly.enable = true;
+  services.displayManager.ly.settings = {
+    animated = true;
+    animation = 0;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -63,6 +69,14 @@
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.pam.services = {
+    "krode" = {
+      kwallet = {
+        enable = true;
+        package = pkgs.kdePackages.kwallet-pam;
+      };
+    };
+  };
   services.pipewire = {
     enable = true;
     alsa.enable = true;
