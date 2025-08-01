@@ -40,17 +40,25 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Pantheon Desktop Environment.
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/Hyprland";
+        user = "krode";
+      };
+      default_session = initial_session;
+    };
+  };
   services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true; # Enable Wayland support
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
   programs.hyprland = {
     enable = true;
     withUWSM = true;
-    xwayland.enable = true; # Enable Wayland support
+    xwayland.enable = true;
   };
 
 /*   services.displayManager.ly.enable = true;
@@ -64,10 +72,9 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
