@@ -14,5 +14,6 @@
     sdrpp
     element-desktop
     kicad
+    signal-desktop
   ];
 }
