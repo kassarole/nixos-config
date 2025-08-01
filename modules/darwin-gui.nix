@@ -22,6 +22,7 @@
         "windows-app"
         "element"
         "kicad"
+        "signal"
     ];
     taps = [
 
