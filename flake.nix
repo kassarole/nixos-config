@@ -21,7 +21,6 @@
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
-          ./modules/sdr.nix
         ];
         selene = [
           ./modules/mount.nix
