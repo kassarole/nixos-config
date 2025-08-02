@@ -203,11 +203,11 @@ in
       mainBar = {
         layer = "top";
         position = "top";
-        modules-left = [ "hyprland/workspaces" "clock" ];
+        modules-left = [ "hyprland/workspaces"];
         modules-center = [ ];
-        modules-right = [ "pulseaudio" "network" "battery" "tray" ];
+        modules-right = [ "pulseaudio" "network" "battery" "clock" "tray" ];
         clock = {
-          format = "{:%a %b %d %H:%M}";
+          format = "{:%a %b %d %I:%M %p}";
         };
         battery = {
           format = "{capacity}% {icon}";
@@ -232,7 +232,7 @@ in
       }
 
       window#waybar {
-        background-color: #1a1a1a;
+        background: rgba(26, 26, 26, 0.8);
         color: #ff79c6;
         border-bottom: 2px solid #ff79c6;
       }
