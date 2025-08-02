@@ -51,18 +51,6 @@
   services.displayManager.sddm.wayland.enable = true; # Enable Wayland support
   services.desktopManager.plasma6.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    xwayland.enable = true;
-  };
-
-/*   services.displayManager.ly.enable = true;
-  services.displayManager.ly.settings = {
-    animated = true;
-    animation = 0;
-  }; */
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";

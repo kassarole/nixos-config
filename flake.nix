@@ -21,6 +21,7 @@
           ./modules/gaming.nix
           ./modules/mount.nix
           ./modules/gui.nix
+          ./modules/hyprland.nix
         ];
         selene = [
           ./modules/mount.nix
@@ -34,6 +35,7 @@
           ./modules/mount.nix
           ./modules/gui.nix
           ./modules/ctftools.nix
+          ./modules/hyprland.nix
         ];
         hephaestus = [
           ./modules/mount.nix
