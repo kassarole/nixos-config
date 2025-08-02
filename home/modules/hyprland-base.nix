@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, lib, ...}:
 let
   super = "SUPER";
   wallpaper = "https://wallpapers.com/images/hd/pink-90s-aesthetic-x2i9y8jjvje2hu5b.jpg";
@@ -28,6 +28,7 @@ in
       variant = "macchiato";
     })
   ];
+
   ### Hyprland
   qt.enable = true;
   qt.platformTheme.name = "qtct";
@@ -171,6 +172,8 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = null;
+    portalPackage = null;
     settings = {
       env = [
         "BROWSER=microsoft-edge"

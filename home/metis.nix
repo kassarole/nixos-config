@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ./home/modules/hyprland-base.nix
+    ./modules/hyprland-base.nix
   ];
   home.username = "krode";
   home.homeDirectory = "/home/krode";
@@ -36,7 +36,7 @@ home.packages = with pkgs; [
   home.file.".zshrc".text = lib.mkAfter ''
     export TERM=xterm-256color
   '';
-wayland.windowManager.hyprland.settings = {
-  monitor = [ "eDP-2,2560x1600@165,0x0,1" ];
-};
+  wayland.windowManager.hyprland.settings = {
+    monitor = [ "eDP-2,2560x1600@165,0x0,1" ];
+  };
 }

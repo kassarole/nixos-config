@@ -2,7 +2,7 @@
 {
   imports = [ 
     plasma-manager.homeManagerModules.plasma-manager
-    ./home/modules/hyprland-base.nix
+    ./modules/hyprland-base.nix
     ];
   home.file.".wallpapers/wallpaper.jpg".source = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/kassarole/kassiopia-photos/refs/heads/main/photos/IMG_2031.png";
@@ -18,7 +18,6 @@
     fi
   '';
   };
-
 
   programs.plasma = {
     enable = true;
@@ -78,5 +77,5 @@
       "DP-1,2560x1440@165,1920x0,1"
       "DP-2,1920x1080@165,4480x0,1"
     ];
-  }
+  };
 }
